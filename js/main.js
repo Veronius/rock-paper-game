@@ -14,7 +14,7 @@ function play(e) {
     const computerChoice = getChoice();
     const winner = getWinner(playerChoice, computerChoice);
 
-    console.log(playerChoice, computerChoice, winner)
+    showWinner(winner, computerChoice);
 }
 
 //choice for computer
@@ -55,5 +55,44 @@ function getWinner(player, computer) {
     }
 }
 
+function showWinner(winner, computerChoice) {
+    if (winner === 'player') {
+        scoreboard.player++;
+        result.innerHTML = `
+        <h1 class="text-win">Вы пераможца</h1>
+        <i class="choice fas fa-hand-${computerChoice} fa-10x"></i>
+         <p>Кампутар абраў <strong>${computerChoice}</strong></p>`;
+    } else if (winner === 'computer' ) {
+        scoreboard.computer++;
+        result.innerHTML = `
+        <h1 class="text-loose">Вы прайгралі</h1>
+        <i class="choice fas fa-hand-${computerChoice} fa-10x"></i>
+         <p>Кампутар абраў <strong>${computerChoice}</strong></p>`;
+    } else {
+        result.innerHTML = `
+        <h1>Гэта нічыя</h1>
+        <i class="choice fas fa-hand-${computerChoice} fa-10x"></i>
+         <p>Кампутар абраў <strong>${computerChoice}</strong></p>`;
+    }
+    score.innerHTML = `<p>Гулец:${scoreboard.player}</p> <p>Кампутар:${scoreboard.computer}</p>`;
+
+    modal.style.display = 'block';
+}
+
+function restartGame() {
+    scoreboard.player = 0;
+    scoreboard.computer = 0;
+    score.innerHTML = `<p>Гулец: 0</p> <p>Кампутар: 0</p>`
+}
+
+function clearModal(e) {
+    if (e.target == modal) {
+        modal.style.display = 'none';
+    }
+}
+
 //event listeners
 choices.forEach(choice => choice.addEventListener('click', play));
+window.addEventListener('click', clearModal);
+restart.addEventListener('click', restartGame);
+
