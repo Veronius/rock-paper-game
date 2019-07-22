@@ -4,7 +4,6 @@
     --lose-color: #b50e01;
     --win-color: #2c800d;
     --main-color: #b46edf;
-    --modal-duration: 2s;
 }
 
 * {
@@ -27,13 +26,14 @@ body {
 }
 .restart-button {
     display: none;
-    background: darkgrey;
+    background: white;
     color: #333;
     padding: 0.5rem 1.3rem;
     font-size: 1rem;
     cursor: pointer;
     outline: none;
     border: none;
+    margin-bottom: 1rem;
 }
 .restart-button:hover {
     background: var(--main-color);
@@ -70,4 +70,21 @@ body {
 }
 .choice:hover {
     color: var(--main-color);
+}
+.text-win {
+    color: var(--win-color);
+}
+.text-loose {
+    color: var(--lose-color);
+}
+@media (max-width: 700px) {
+    .choice {
+        font-size: 110px;
+    }
+}
+
+@media (max-width: 500px) {
+    .choice {
+        font-size: 80px;
+    }
 }
