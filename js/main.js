@@ -3,10 +3,26 @@ const score = document.getElementById('score');
 const result = document.getElementById('result');
 const restart = document.getElementById('restart');
 const  modal = document.querySelector('.modal');
+
+// loader variable
+const loader = document.querySelector('.loader');
+const main = document.querySelector('.container');
+
 const scoreboard = {
     player: 0,
     computer: 0
 };
+
+
+function init() {
+    setTimeout(() => {
+        loader.style.opacity = 0;
+        loader.style.display = 'none';
+        main.style.display = 'block';
+        setTimeout(() =>  (main.style.opacity = 1), 50);
+    }, 3500);
+}
+init();
 
 function play(e) {
     restart.style.display = 'inline-block';

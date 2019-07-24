@@ -23,6 +23,9 @@ body {
     overflow: hidden;
     padding: 0 2rem;
     text-align: center;
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in;
 }
 .restart-button {
     display: none;

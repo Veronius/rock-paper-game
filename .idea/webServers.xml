@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="10c76889-5493-4289-8cab-25b8e8d3ca79" name="123" url="http://rock-paper-game">
+        <fileTransfer port="0" mountedRoot="E:\projects\rock-paper-game" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
